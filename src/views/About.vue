@@ -29,7 +29,7 @@ export default {
       el.style.transform = 'translateY(-60px)'
       el.style.opacity = 0
     }
-    const enter = (el) => {
+    const enter = (el, done) => {
       console.log('enter',el)
       gsap.to(el, {
         duration:1,
@@ -39,7 +39,7 @@ export default {
         onComplete: done
       })
     }
-    const afterEnter = (el, done) => {
+    const afterEnter = (el) => {
       el.style.color = 'green'
       console.log('afterEnter',el)
       setTimeout(()=>showTitle.value = false , 2000)
